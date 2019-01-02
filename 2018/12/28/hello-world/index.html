@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="colinyou&#39;s home">
 <meta property="og:description" content="为对象添加新功能，不改变原有的结构和功能  相关代码实现1234567891011121314151617181920212223class Circle &amp;#123;  draw() &amp;#123;    console.log(&apos;画一个圆&apos;)  &amp;#125;&amp;#125;class Decorator &amp;#123;  constructor(circle)&amp;#123;    this.circle">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/Users/youguodong/Desktop/Blog/Hexo/source/_posts/1.png">
-<meta property="og:updated_time" content="2019-01-02T01:58:51.464Z">
+<meta property="og:image" content="https://github.com/youguodong/blogImages/blob/master/设计模式/1.png?raw=true">
+<meta property="og:updated_time" content="2019-01-02T02:13:33.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="装饰器模式">
 <meta name="twitter:description" content="为对象添加新功能，不改变原有的结构和功能  相关代码实现1234567891011121314151617181920212223class Circle &amp;#123;  draw() &amp;#123;    console.log(&apos;画一个圆&apos;)  &amp;#125;&amp;#125;class Decorator &amp;#123;  constructor(circle)&amp;#123;    this.circle">
-<meta name="twitter:image" content="http://yoursite.com/Users/youguodong/Desktop/Blog/Hexo/source/_posts/1.png">
+<meta name="twitter:image" content="https://github.com/youguodong/blogImages/blob/master/设计模式/1.png?raw=true">
 
 
 
@@ -377,7 +377,7 @@
 
       
         <p>为对象添加新功能，不改变原有的结构和功能</p>
-<p><img src="/Users/youguodong/Desktop/Blog/Hexo/source/_posts/1.png" alt="1"></p>
+<p><img src="https://github.com/youguodong/blogImages/blob/master/设计模式/1.png?raw=true" alt="1"></p>
 <h5 id="相关代码实现"><a href="#相关代码实现" class="headerlink" title="相关代码实现"></a>相关代码实现</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line">  draw() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'画一个圆'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(circle)&#123;</span><br><span class="line">    <span class="keyword">this</span>.circle = circle</span><br><span class="line">  &#125;</span><br><span class="line">  draw() &#123;</span><br><span class="line">    <span class="keyword">this</span>.circle.draw()</span><br><span class="line">    <span class="keyword">this</span>.setRedBorder(circle)</span><br><span class="line">  &#125;</span><br><span class="line">  setRedBorder(cicle)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'设置红色边框'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> circle = <span class="keyword">new</span> Circle()</span><br><span class="line">circle.draw()</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> decorator = <span class="keyword">new</span> Decorator(circle)</span><br><span class="line">decorator.draw()</span><br></pre></td></tr></table></figure>
 <h5 id="使用场景-es7装饰器"><a href="#使用场景-es7装饰器" class="headerlink" title="使用场景(es7装饰器)"></a>使用场景(es7装饰器)</h5><p><code>core-decorators</code>第三库的使用</p>
 <p>环境配置</p>
