@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,">
+  <meta name="keywords" content="设计模式,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧! 注: 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 1. 启动及部署指令本地查看效果1">
-<meta name="keywords" content="hexo">
+<meta name="description" content="使用者无权访问目标对象，中间加代理，通过代理做授权和控制  相关代码实现1234567891011121314151617181920212223class ReadImg &amp;#123;  constructor(fileName) &amp;#123;    this.fileName = fileName    this.loadFromDisk()  &amp;#125;  display() &amp;#123;">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo搭建Next主题使用小结">
-<meta property="og:url" content="http://yoursite.com/2018/12/28/HexoNext一些总结/index.html">
+<meta property="og:title" content="装饰器模式">
+<meta property="og:url" content="http://yoursite.com/2018/12/28/代理模式/index.html">
 <meta property="og:site_name" content="colinyou&#39;s home">
-<meta property="og:description" content="自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧! 注: 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 1. 启动及部署指令本地查看效果1">
+<meta property="og:description" content="使用者无权访问目标对象，中间加代理，通过代理做授权和控制  相关代码实现1234567891011121314151617181920212223class ReadImg &amp;#123;  constructor(fileName) &amp;#123;    this.fileName = fileName    this.loadFromDisk()  &amp;#125;  display() &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T02:27:05.718Z">
+<meta property="og:image" content="https://github.com/youguodong/blogImages/blob/master/设计模式/2.png?raw=true">
+<meta property="og:updated_time" content="2019-01-07T02:14:48.410Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo搭建Next主题使用小结">
-<meta name="twitter:description" content="自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧! 注: 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 1. 启动及部署指令本地查看效果1">
+<meta name="twitter:title" content="装饰器模式">
+<meta name="twitter:description" content="使用者无权访问目标对象，中间加代理，通过代理做授权和控制  相关代码实现1234567891011121314151617181920212223class ReadImg &amp;#123;  constructor(fileName) &amp;#123;    this.fileName = fileName    this.loadFromDisk()  &amp;#125;  display() &amp;#123;">
+<meta name="twitter:image" content="https://github.com/youguodong/blogImages/blob/master/设计模式/2.png?raw=true">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/28/HexoNext一些总结/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/28/代理模式/">
 
 
 
 
 
-  <title>hexo搭建Next主题使用小结 | colinyou's home</title>
+  <title>装饰器模式 | colinyou's home</title>
   
 
 
@@ -285,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/HexoNext一些总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/代理模式/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Colin You">
@@ -302,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo搭建Next主题使用小结</h1>
+          <h1 class="post-title" itemprop="name headline">装饰器模式</h1>
         
 
         <div class="post-meta">
@@ -337,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/js中的设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">js中的设计模式</span>
                   </a>
                 </span>
 
@@ -374,41 +376,16 @@
       
 
       
-        <p>自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧!</p>
-<p>注: 在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 <code>站点配置文件</code>， 后者称为 <code>主题配置文件</code>。</p>
-<h3 id="1-启动及部署指令"><a href="#1-启动及部署指令" class="headerlink" title="1. 启动及部署指令"></a>1. 启动及部署指令</h3><h5 id="本地查看效果"><a href="#本地查看效果" class="headerlink" title="本地查看效果"></a>本地查看效果</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<h5 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean (必须要，不然有时因为缓存问题，服务器更新不了主题)</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="2-next主题配置"><a href="#2-next主题配置" class="headerlink" title="2. next主题配置"></a>2. next主题配置</h3><h5 id="博客主题样式"><a href="#博客主题样式" class="headerlink" title="博客主题样式"></a>博客主题样式</h5><p><code>主题配置文件</code>修改 scheme: Pisces</p>
-<h5 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h5><p><code>站点配置文件</code>修改 language: zh-Hans</p>
-<h5 id="设置菜单栏"><a href="#设置菜单栏" class="headerlink" title="设置菜单栏"></a>设置菜单栏</h5><p><code>主题配置文件</code>修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-<h5 id="设置菜单栏总是靠左显示"><a href="#设置菜单栏总是靠左显示" class="headerlink" title="设置菜单栏总是靠左显示"></a>设置菜单栏总是靠左显示</h5><p><code>主题配置文件</code>修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  position: left</span><br><span class="line">  display: always</span><br></pre></td></tr></table></figure>
-<h5 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h5><p><code>主题配置文件</code>修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: http://example.com/avatar.png</span><br></pre></td></tr></table></figure>
-<h5 id="设置作者昵称"><a href="#设置作者昵称" class="headerlink" title="设置作者昵称"></a>设置作者昵称</h5><p><code>站点配置文件</code>修改 author: xxx</p>
-<h5 id="设置首页只显示预览-卡片效果"><a href="#设置首页只显示预览-卡片效果" class="headerlink" title="设置首页只显示预览(卡片效果)"></a>设置首页只显示预览(卡片效果)</h5><p><code>主题配置文件</code>修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
-<h5 id="添加站点搜索功能"><a href="#添加站点搜索功能" class="headerlink" title="添加站点搜索功能"></a>添加站点搜索功能</h5><p><code>第一步</code>      站点根目录安装 hexo-generator-searchdb</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-<p><code>第二步</code></p>
-<p><code>站点配置文件</code>   添加search字段具体如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
-<p><code>第三步</code>  </p>
-<p> <code>主题配置文件</code> 修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-<h5 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h5><p><code>第一步</code> 在终端窗口下，定位到 Hexo 站点目录下。使用 <code>hexo new page</code> 新建一个页面，命名为 <code>tags</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-<p><code>第二步</code> .md的页面内容设置如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: js设计模式</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;(必填)</span><br></pre></td></tr></table></figure>
-<p><code>第三步</code> 修改菜单  在菜单中添加链接，编辑<code>主题配置文件</code>， 添加 <code>tags</code> 到 <code>menu</code> 中，如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags (必填)</span><br></pre></td></tr></table></figure>
-<h5 id="添加分类页面"><a href="#添加分类页面" class="headerlink" title="添加分类页面"></a>添加分类页面</h5><p><code>第一步</code>   在终端窗口下，定位到 Hexo 站点目录下。使用 <code>hexo new page</code> 新建一个页面，命名为 <code>categories</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd your-hexo-site</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-<p><code>第二步</code>   编辑刚新建的页面，将页面的 <code>type</code> 设置为 <code>categories</code> ，主题将自动为这个页面显示分类。页面内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot; (必填)</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p><code>第三步</code>  在菜单中添加链接。编辑主题配置文件,添加 <code>categories</code> 到 <code>menu</code> 中，如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  categories: /categories (必填)</span><br></pre></td></tr></table></figure>
+        <p>使用者无权访问目标对象，中间加代理，通过代理做授权和控制</p>
+<p><img src="https://github.com/youguodong/blogImages/blob/master/设计模式/2.png?raw=true" alt="1"></p>
+<h5 id="相关代码实现"><a href="#相关代码实现" class="headerlink" title="相关代码实现"></a>相关代码实现</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReadImg</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(fileName) &#123;</span><br><span class="line">    <span class="keyword">this</span>.fileName = fileName</span><br><span class="line">    <span class="keyword">this</span>.loadFromDisk()</span><br><span class="line">  &#125;</span><br><span class="line">  display() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'display...'</span> + <span class="keyword">this</span>.fileName)</span><br><span class="line">  &#125;</span><br><span class="line">  loadFromDisk() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'loading...'</span> + <span class="keyword">this</span>.fileName)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProxyImg</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(fileName) &#123;</span><br><span class="line">    <span class="keyword">this</span>.realImg = <span class="keyword">new</span> ReadImg(fileName)</span><br><span class="line">  &#125;</span><br><span class="line">  display() &#123;</span><br><span class="line">    <span class="keyword">this</span>.realImg.display()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> proxyImg = <span class="keyword">new</span> ProxyImg(<span class="string">'1.png'</span>)</span><br><span class="line">proxyImg.display()</span><br></pre></td></tr></table></figure>
+<h5 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h5><p><code>场景1</code>  网页事件代理</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a6<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/3.3.0/jquery.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="keyword">let</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>)</span></span><br><span class="line"><span class="javascript">       div1.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="keyword">let</span> target = e.target</span></span><br><span class="line"><span class="javascript">          <span class="keyword">if</span> (target.nodeName === <span class="string">'A'</span>)&#123;</span></span><br><span class="line"><span class="undefined">            alert(target.innerHTML)</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">       &#125;)</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>场景2</code>   jQuery  $.proxy</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a6<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/3.3.0/jquery.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      $(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> _this = <span class="keyword">this</span></span></span><br><span class="line"><span class="javascript">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           $(_this).css(<span class="string">'background-color'</span>, <span class="string">'yellow'</span>)</span></span><br><span class="line"><span class="undefined">        &#125;,1000)</span></span><br><span class="line"><span class="undefined">      &#125;)</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a6<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/3.3.0/jquery.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      $(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          $(<span class="keyword">this</span>).css(<span class="string">'background-color'</span>, <span class="string">'yellow'</span>)</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        fn = $.proxy(fn, <span class="keyword">this</span>)</span></span><br><span class="line"><span class="undefined">        setTimeout(fn,1000)</span></span><br><span class="line"><span class="undefined">      &#125;)</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>场景3</code>  明星与经纪人</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 明星</span></span><br><span class="line"><span class="keyword">let</span> star = &#123;</span><br><span class="line">  name: <span class="string">'张xx'</span>,</span><br><span class="line">  age: <span class="number">25</span>,</span><br><span class="line">  phone: <span class="string">'star: 1390000011111'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//经纪人</span></span><br><span class="line"><span class="keyword">let</span> agent = <span class="keyword">new</span> <span class="built_in">Proxy</span>(star,&#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params">target, key</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (key === <span class="string">'phone'</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'agent: 16899997777'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key === <span class="string">'price'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">120000</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target[key]</span><br><span class="line">  &#125;,</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span> (<span class="params">target, key, val</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (key === <span class="string">'customPrice'</span>)&#123;</span><br><span class="line">       <span class="keyword">if</span> (val &lt; <span class="number">100000</span>)&#123;</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'价格太低'</span>)</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">         target[key] = value</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(agent.name)</span><br><span class="line"><span class="built_in">console</span>.log(agent.age)</span><br><span class="line"><span class="built_in">console</span>.log(agent.phone)</span><br><span class="line"><span class="built_in">console</span>.log(agent.price)</span><br><span class="line">agent.customPrice = <span class="number">90000</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -426,7 +403,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
         </div>
       
@@ -439,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/28/装饰器模式/" rel="next" title="装饰器模式">
-                <i class="fa fa-chevron-left"></i> 装饰器模式
+              <a href="/2018/12/28/HexoNext一些总结/" rel="next" title="hexo搭建Next主题使用小结">
+                <i class="fa fa-chevron-left"></i> hexo搭建Next主题使用小结
               </a>
             
           </div>
@@ -448,10 +425,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/28/代理模式/" rel="prev" title="装饰器模式">
-                装饰器模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -601,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-启动及部署指令"><span class="nav-number">1.</span> <span class="nav-text">1. 启动及部署指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#本地查看效果"><span class="nav-number">1.0.1.</span> <span class="nav-text">本地查看效果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#部署到服务器"><span class="nav-number">1.0.2.</span> <span class="nav-text">部署到服务器</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#2-next主题配置"><span class="nav-number">2.</span> <span class="nav-text">2. next主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#博客主题样式"><span class="nav-number">2.0.1.</span> <span class="nav-text">博客主题样式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置语言"><span class="nav-number">2.0.2.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置菜单栏"><span class="nav-number">2.0.3.</span> <span class="nav-text">设置菜单栏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置菜单栏总是靠左显示"><span class="nav-number">2.0.4.</span> <span class="nav-text">设置菜单栏总是靠左显示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置头像"><span class="nav-number">2.0.5.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置作者昵称"><span class="nav-number">2.0.6.</span> <span class="nav-text">设置作者昵称</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置首页只显示预览-卡片效果"><span class="nav-number">2.0.7.</span> <span class="nav-text">设置首页只显示预览(卡片效果)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加站点搜索功能"><span class="nav-number">2.0.8.</span> <span class="nav-text">添加站点搜索功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加标签页面"><span class="nav-number">2.0.9.</span> <span class="nav-text">添加标签页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加分类页面"><span class="nav-number">2.0.10.</span> <span class="nav-text">添加分类页面</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#相关代码实现"><span class="nav-number">1.</span> <span class="nav-text">相关代码实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用场景"><span class="nav-number">2.</span> <span class="nav-text">使用场景</span></a></li></ol></div>
             
 
           </div>
