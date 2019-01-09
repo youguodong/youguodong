@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[装饰器模式]]></title>
-    <url>%2F2018%2F12%2F28%2F%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[为对象添加新功能，不改变原有的结构和功能 相关代码实现1234567891011121314151617181920212223class Circle &#123; draw() &#123; console.log('画一个圆') &#125;&#125;class Decorator &#123; constructor(circle)&#123; this.circle = circle &#125; draw() &#123; this.circle.draw() this.setRedBorder(circle) &#125; setRedBorder(cicle)&#123; console.log('设置红色边框') &#125;&#125;let circle = new Circle()circle.draw()let decorator = new Decorator(circle)decorator.draw() 使用场景(es7装饰器)core-decorators第三库的使用 环境配置 1234567 npm install @babel/plugin-proposal-decorators --save-dev.babelrc相关配置 &#123; &quot;presets&quot;: [&quot;@babel/preset-env&quot;], &quot;plugins&quot;: [[&quot;@babel/plugin-proposal-decorators&quot;,&#123;&quot;legacy&quot;:true&#125;]] &#125; 场景1 123456789@testDecclass Demo &#123;&#125;function testDec (target) &#123; target.desc = true&#125;alert(Demo.desc) 场景2 1234567891011121314151617181920function mixin (...list) &#123; return function (target) &#123; Object.assign(target.prototype,...list) &#125;&#125;const Foo = &#123; foo()&#123; alert('foo') &#125;&#125;@mixin(Foo)class MyClass &#123;&#125;let tem = new MyClass()tem.foo() 场景3 123456789101112131415161718192021function readOnly (target,name,descriptor) &#123; descriptor.writable = false console.log(descriptor) return descriptor&#125;class Person &#123; constructor() &#123; this.first = 'A' this.last = 'B' &#125; @readOnly name() &#123; return `$&#123;this.first&#125; $&#123;this.last&#125;` &#125;&#125;let p = new Person()console.log(p.name())p.name = function () &#123; return '你好'&#125;console.log(p.name()) 场景4 12345678910111213141516function log (target, name, decriptor) &#123; let oldValue = decriptor.value decriptor.value = function () &#123; console.log(`calling $&#123;name&#125; width $&#123;arguments&#125;`) return oldValue.apply(this,arguments) &#125; return decriptor&#125;class Math &#123; @log add(a, b) &#123; return a + b &#125;&#125;let math = new Math()const result = math.add(2,4)]]></content>
-      <categories>
-        <category>js中的设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[hexo搭建Next主题使用小结]]></title>
     <url>%2F2018%2F12%2F28%2FHexoNext%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧! 注: 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 1. 启动及部署指令本地查看效果12hexo generatehexo server 部署到服务器123hexo clean (必须要，不然有时因为缓存问题，服务器更新不了主题)hexo generatehexo server 2. next主题配置博客主题样式主题配置文件修改 scheme: Pisces 设置语言站点配置文件修改 language: zh-Hans 设置菜单栏主题配置文件修改 1234567menu: home: / || home tags: /tags/ || tags categories: /categories/ || th archives: /archives/ || archivemenu_icons: enable: true 设置菜单栏总是靠左显示主题配置文件修改 123sidebar: position: left display: always 设置头像主题配置文件修改 1avatar: http://example.com/avatar.png 设置作者昵称站点配置文件修改 author: xxx 设置首页只显示预览(卡片效果)主题配置文件修改 123auto_excerpt: enable: true length: 150 添加站点搜索功能第一步 站点根目录安装 hexo-generator-searchdb 1npm install hexo-generator-searchdb --save 第二步 站点配置文件 添加search字段具体如下 12345search: path: search.xml field: post format: html limit: 10000 第三步 主题配置文件 修改 12local_search: enable: true 添加标签页面第一步 在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 tags 12$ cd your-hexo-site$ hexo new page tags 第二步 .md的页面内容设置如下 123title: js设计模式date: 2014-12-22 12:39:04type: &quot;tags&quot;(必填) 第三步 修改菜单 在菜单中添加链接，编辑主题配置文件， 添加 tags 到 menu 中，如下: 1234menu: home: / archives: /archives tags: /tags (必填) 添加分类页面第一步 在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 categories 12cd your-hexo-sitehexo new page categories 第二步 编辑刚新建的页面，将页面的 type 设置为 categories ，主题将自动为这个页面显示分类。页面内容如下： 1234title: 分类date: 2014-12-22 12:39:04type: &quot;categories&quot; (必填)--- 第三步 在菜单中添加链接。编辑主题配置文件,添加 categories 到 menu 中，如下: 1234menu: home: / archives: /archives categories: /categories (必填)]]></content>
@@ -34,31 +23,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[适配器模式]]></title>
-    <url>%2F2018%2F12%2F28%2F%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[旧接口格式和使用者不兼容，中间加一个适配转换接口 相关代码实现1234567891011121314151617class Adaptee &#123; specificRequest() &#123; return '德国标准插头' &#125;&#125;class Target &#123; constructor() &#123; this.adaptee = new Adaptee() &#125; request() &#123; let info = this.adaptee.specificRequest() return `$&#123;info&#125; - 转化器 - 中国标准插头` &#125;&#125;let target = new Target()let res = target.request()console.log(res) 使用场景场景1 旧接口封装 1234567891011121314151617新封装的接口ajax(&#123; url: '/getData', type: 'Post', dataType: 'json', data: &#123; id: '123' &#125; &#125;).done(function() &#123;&#125;)但因为历史原因，代码中全部都是: $.ajax(&#123;...&#125;)可以做如下修改:做一层适配器let $ = &#123; ajax:function (options) &#123; return ajax(options); &#125;&#125;]]></content>
-      <categories>
-        <category>js中的设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[单例模式]]></title>
     <url>%2F2018%2F12%2F28%2F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[相关代码实现12345678910111213141516171819class SingleObject&#123; login() &#123; console.log('login...') &#125;&#125;SingleObject.getInstance = (function () &#123; let instance return function () &#123; if (!instance)&#123; instance = new SingleObject() &#125; return instance &#125;&#125;)()let obj1 = SingleObject.getInstance()obj1.login()let obj2 = SingleObject.getInstance()obj2.login()console.log('obj1 === obj2',obj1 === obj2) 场景1 模拟登录 123456789101112131415161718192021222324252627282930313233343536class LoginForm &#123; constructor() &#123; this.state = 'hide' &#125; show() &#123; if (this.state === 'show')&#123; alert('已显示') return &#125; this.state = 'show' console.log('登录框显示成功') &#125; hide() &#123; if (this.state === 'hide')&#123; alert('已隐藏') return &#125; this.state = 'hide' console.log('登录框已隐藏') &#125;&#125;LoginForm.getInstance = (function () &#123; let instance return function () &#123; if (!instance)&#123; instance = new LoginForm() &#125; return instance &#125;&#125;)()let login1 = LoginForm.getInstance()login1.show()let login2 = LoginForm.getInstance()login2.show()]]></content>
-      <categories>
-        <category>js中的设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[工厂模式]]></title>
-    <url>%2F2018%2F12%2F28%2F%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[将new操作单独封装，遇到new时，就要考虑是否使用工厂模式 相关代码实现12345678910111213141516171819202122232425class Product &#123; constructor(name) &#123; this.name = name &#125; init() &#123; alert('init') &#125; fun1() &#123; alert('fun1') &#125; fun2() &#123; alert('fun2') &#125;&#125;class Creator &#123; create(name) &#123; return new Product(name) &#125;&#125;let creator = new Creator()let p = creator.create('p1')p.init()p.fun2()]]></content>
       <categories>
         <category>js中的设计模式</category>
       </categories>
@@ -78,9 +45,42 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[工厂模式]]></title>
+    <url>%2F2018%2F12%2F28%2F%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[将new操作单独封装，遇到new时，就要考虑是否使用工厂模式 相关代码实现12345678910111213141516171819202122232425class Product &#123; constructor(name) &#123; this.name = name &#125; init() &#123; alert('init') &#125; fun1() &#123; alert('fun1') &#125; fun2() &#123; alert('fun2') &#125;&#125;class Creator &#123; create(name) &#123; return new Product(name) &#125;&#125;let creator = new Creator()let p = creator.create('p1')p.init()p.fun2()]]></content>
+      <categories>
+        <category>js中的设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[装饰器模式]]></title>
+    <url>%2F2018%2F12%2F28%2F%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[为对象添加新功能，不改变原有的结构和功能 相关代码实现1234567891011121314151617181920212223class Circle &#123; draw() &#123; console.log('画一个圆') &#125;&#125;class Decorator &#123; constructor(circle)&#123; this.circle = circle &#125; draw() &#123; this.circle.draw() this.setRedBorder(circle) &#125; setRedBorder(cicle)&#123; console.log('设置红色边框') &#125;&#125;let circle = new Circle()circle.draw()let decorator = new Decorator(circle)decorator.draw() 使用场景(es7装饰器)core-decorators第三库的使用 环境配置 1234567 npm install @babel/plugin-proposal-decorators --save-dev.babelrc相关配置 &#123; &quot;presets&quot;: [&quot;@babel/preset-env&quot;], &quot;plugins&quot;: [[&quot;@babel/plugin-proposal-decorators&quot;,&#123;&quot;legacy&quot;:true&#125;]] &#125; 场景1 123456789@testDecclass Demo &#123;&#125;function testDec (target) &#123; target.desc = true&#125;alert(Demo.desc) 场景2 1234567891011121314151617181920function mixin (...list) &#123; return function (target) &#123; Object.assign(target.prototype,...list) &#125;&#125;const Foo = &#123; foo()&#123; alert('foo') &#125;&#125;@mixin(Foo)class MyClass &#123;&#125;let tem = new MyClass()tem.foo() 场景3 123456789101112131415161718192021function readOnly (target,name,descriptor) &#123; descriptor.writable = false console.log(descriptor) return descriptor&#125;class Person &#123; constructor() &#123; this.first = 'A' this.last = 'B' &#125; @readOnly name() &#123; return `$&#123;this.first&#125; $&#123;this.last&#125;` &#125;&#125;let p = new Person()console.log(p.name())p.name = function () &#123; return '你好'&#125;console.log(p.name()) 场景4 12345678910111213141516function log (target, name, decriptor) &#123; let oldValue = decriptor.value decriptor.value = function () &#123; console.log(`calling $&#123;name&#125; width $&#123;arguments&#125;`) return oldValue.apply(this,arguments) &#125; return decriptor&#125;class Math &#123; @log add(a, b) &#123; return a + b &#125;&#125;let math = new Math()const result = math.add(2,4)]]></content>
+      <categories>
+        <category>js中的设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[单例模式]]></title>
     <url>%2F2018%2F12%2F28%2F%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[发布，订阅，一对多 相关代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344// 主题，保存状态，状态变化之后触发所有观察者对象class Subject &#123; constructor() &#123; this.state = 0 this.observers = [] &#125; getState() &#123; return this.state &#125; setState(state)&#123; this.state = state this.notifyAllObservers() &#125; notifyAllObservers() &#123; this.observers.forEach(observer =&gt; &#123; observer.update() &#125;) &#125; attach(observer) &#123; this.observers.push(observer) &#125;&#125;// 观察者class Observer &#123; constructor(name, subject) &#123; this.name = name this.subject = subject this.subject.attach(this) &#125; update() &#123; console.log(`$&#123;this.name&#125; update, state: $&#123;this.subject.getState()&#125;`) &#125;&#125;// 测试let s = new Subject()let o1 = new Observer('o1',s)let o2 = new Observer('o2',s)let o3 = new Observer('O3',s)s.setState(1)s.setState(2)s.setState(3) 场景1 网页时间绑定 12345678910111213141516&lt;body&gt; &lt;button id="btn1"&gt;btn&lt;/button&gt;&lt;/body&gt;&lt;script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"&gt;&lt;/script&gt;&lt;script&gt; $('#btn1').click(function () &#123; console.log(1) &#125;) $('#btn2').click(function () &#123; console.log(2) &#125;) $('#btn3').click(function () &#123; console.log(3) &#125;)&lt;/script&gt; 场景2 Promise 123456789101112131415161718192021function loadImg () &#123; let promise = new Promise(function (resolve, reject) &#123; let img = document.createElement('img') img.onload = function () &#123; resolve(img) &#125; img.onerror = function () &#123; reject('图片加载失败') &#125; img.src = src &#125;) return promise&#125;let src = 'https://github.com/youguodong/blogImages/blob/master/设计模式/6.png?raw=true'let result = loadImg(src)result.then(function (img) &#123; console.log('width',img.width)&#125;).then(function (img) &#123; console.log('height',img.height)&#125;) 场景3 jQuery callbacks 12345678910111213141516&lt;script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"&gt;&lt;/script&gt;&lt;script&gt;//自定义事件let callbacks = $.Callbacks()callbacks.add(function (info) &#123; console.log('fn1',info)&#125;)callbacks.add(function (info) &#123; console.log('fn2',info)&#125;)callbacks.add(function (info) &#123; console.log('fn3',info)&#125;)callbacks.fire('gogogo')callbacks.fire('hello world')&lt;/script&gt;]]></content>
+      <categories>
+        <category>js中的设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[适配器模式]]></title>
+    <url>%2F2018%2F12%2F28%2F%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[旧接口格式和使用者不兼容，中间加一个适配转换接口 相关代码实现1234567891011121314151617class Adaptee &#123; specificRequest() &#123; return '德国标准插头' &#125;&#125;class Target &#123; constructor() &#123; this.adaptee = new Adaptee() &#125; request() &#123; let info = this.adaptee.specificRequest() return `$&#123;info&#125; - 转化器 - 中国标准插头` &#125;&#125;let target = new Target()let res = target.request()console.log(res) 使用场景场景1 旧接口封装 1234567891011121314151617新封装的接口ajax(&#123; url: '/getData', type: 'Post', dataType: 'json', data: &#123; id: '123' &#125; &#125;).done(function() &#123;&#125;)但因为历史原因，代码中全部都是: $.ajax(&#123;...&#125;)可以做如下修改:做一层适配器let $ = &#123; ajax:function (options) &#123; return ajax(options); &#125;&#125;]]></content>
       <categories>
         <category>js中的设计模式</category>
       </categories>
