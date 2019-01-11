@@ -2,6 +2,19 @@
 <search>
   <entry>
     <title><![CDATA[观察者模式]]></title>
+    <url>%2F2018%2F07%2F03%2Fvue%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%9A%84nginx%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[vue项目的config/index.js文件相关配置 1234567891011build: &#123; env: require('./prod.env'), index: path.resolve(__dirname, '../dist/index.html'), assetsRoot: path.resolve(__dirname, '../dist'), assetsSubDirectory: 'static', assetsPublicPath: '/weixin/', //项目名称 productionSourceMap: false, productionGzip: true, productionGzipExtensions: ['js', 'css'], bundleAnalyzerReport: process.env.npm_config_report &#125;, 对应的nginx配置 123456789101112131415161718192021222324252627282930313233343536server&#123; listen 80; server_name www.xxxxx.com; //访问web的域名 location ~ .*\.(html|htm|ico|txt|js|css|woff2?|eot|ttf|otf|png|jpe?g|gif|svg|exe)$ &#123; root html/xxxx/dist; index index.html index.htm index.jsp; &#125; // 当以html|htm|ico|txt|js|css|woff2?|eot|ttf|otf|png|jpe?g|gif|svg|exe这些文件结尾的文件找不到时就去html/xxxx/dist;就去这个目录去找 location /api &#123; index index.html index.htm index.jsp; rewrite $1 /; proxy_pass http://172.168.8.196:32/weixin; //web项目访问的服务器的域名 proxy_cookie_path /PKECUser /; proxy_set_header Host $host; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header REMOTE-HOST $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; &#125; location /websocket &#123; rewrite $1 /; proxy_pass http://localhost:8082/; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection "upgrade"; proxy_read_timeout 86400; &#125; location ^~ /image&#123; root /usr/local/image; &#125; location ^~ /weixin &#123; alias html/xxxx/dist; &#125; // 访问链接匹配到weixin就会去访问web在服务器上的目录 location / &#123; try_files $uri $uri/ /index.html; &#125; //可以让vue项目的vuerouter的各个路由可以单独访问&#125; 提示 该web项目的访问的链接http://www.xxxxx.com/weixin]]></content>
+      <categories>
+        <category>nginx</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[观察者模式]]></title>
     <url>%2F2018%2F07%2F02%2F%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[发布，订阅，一对多 相关代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344// 主题，保存状态，状态变化之后触发所有观察者对象class Subject &#123; constructor() &#123; this.state = 0 this.observers = [] &#125; getState() &#123; return this.state &#125; setState(state)&#123; this.state = state this.notifyAllObservers() &#125; notifyAllObservers() &#123; this.observers.forEach(observer =&gt; &#123; observer.update() &#125;) &#125; attach(observer) &#123; this.observers.push(observer) &#125;&#125;// 观察者class Observer &#123; constructor(name, subject) &#123; this.name = name this.subject = subject this.subject.attach(this) &#125; update() &#123; console.log(`$&#123;this.name&#125; update, state: $&#123;this.subject.getState()&#125;`) &#125;&#125;// 测试let s = new Subject()let o1 = new Observer('o1',s)let o2 = new Observer('o2',s)let o3 = new Observer('O3',s)s.setState(1)s.setState(2)s.setState(3) 场景1 网页时间绑定 12345678910111213141516&lt;body&gt; &lt;button id="btn1"&gt;btn&lt;/button&gt;&lt;/body&gt;&lt;script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"&gt;&lt;/script&gt;&lt;script&gt; $('#btn1').click(function () &#123; console.log(1) &#125;) $('#btn2').click(function () &#123; console.log(2) &#125;) $('#btn3').click(function () &#123; console.log(3) &#125;)&lt;/script&gt; 场景2 Promise 123456789101112131415161718192021function loadImg () &#123; let promise = new Promise(function (resolve, reject) &#123; let img = document.createElement('img') img.onload = function () &#123; resolve(img) &#125; img.onerror = function () &#123; reject('图片加载失败') &#125; img.src = src &#125;) return promise&#125;let src = 'https://github.com/youguodong/blogImages/blob/master/设计模式/6.png?raw=true'let result = loadImg(src)result.then(function (img) &#123; console.log('width',img.width)&#125;).then(function (img) &#123; console.log('height',img.height)&#125;) 场景3 jQuery callbacks 12345678910111213141516&lt;script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"&gt;&lt;/script&gt;&lt;script&gt;//自定义事件let callbacks = $.Callbacks()callbacks.add(function (info) &#123; console.log('fn1',info)&#125;)callbacks.add(function (info) &#123; console.log('fn2',info)&#125;)callbacks.add(function (info) &#123; console.log('fn3',info)&#125;)callbacks.fire('gogogo')callbacks.fire('hello world')&lt;/script&gt;]]></content>
       <categories>
@@ -15,6 +28,17 @@
     <title><![CDATA[外观模式]]></title>
     <url>%2F2018%2F07%2F01%2F%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[相关代码实现1234567891011function bindEvent (elem, type, selector, fn) &#123; if (fn == null)&#123; fn = selector selector = null &#125; // ****&#125;//调用bindEvent(elem,'click','#div1',fn)bindEvent(elem,'click',fn)]]></content>
+      <categories>
+        <category>js中的设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[迭代器模式]]></title>
+    <url>%2F2018%2F07%2F01%2F%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[相关代码实现12345678910111213141516171819202122232425262728293031323334class Iterator &#123; constructor(container) &#123; this.list = container.list this.index = 0 &#125; next() &#123; if (this.hasNext()) &#123; return this.list[this.index++] &#125; return null &#125; hasNext() &#123; if (this.index &gt;= this.list.length)&#123; return false &#125; return true &#125;&#125;class Container &#123; constructor(list) &#123; this.list = list &#125; getIterator() &#123; return new Iterator(this) &#125;&#125;let arr = [1,2,3,4,5,6]let container = new Container(arr)let iterator = container.getIterator()while (iterator.hasNext())&#123; console.log(iterator.next())&#125; 场景1 jQuery each 123456789101112131415161718192021222324252627&lt;body&gt; &lt;div id="div1"&gt; &lt;a href="#"&gt;a1&lt;/a&gt; &lt;a href="#"&gt;a2&lt;/a&gt; &lt;a href="#"&gt;a3&lt;/a&gt; &lt;a href="#"&gt;a4&lt;/a&gt; &lt;a href="#"&gt;a5&lt;/a&gt; &lt;a href="#"&gt;a6&lt;/a&gt; &lt;/div&gt; &lt;script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"&gt; &lt;/script&gt; &lt;script&gt; let arr = [1,2,3] let nodeList = document.getElementsByTagName('a') let $a = $('a') function each (data) &#123; let $data = $(data) $data.each(function (key, val) &#123; console.log(key,val) &#125;) &#125; each(arr) each(nodeList) each($a) &lt;/script&gt;&lt;/body&gt; 场景2 es6 Iterator 123456789101112131415161718192021222324252627282930313233function each (data) &#123; let iterator = data[Symbol.iterator]() let item = &#123;done: false&#125; while (!item.done)&#123; item = iterator.next() if (!item.done)&#123; console.log(item.value) &#125; &#125;&#125;let arr = [1,2,3,4]let nodeList = document.getElementsByTagName('p')let m = new Map()m.set('a',100)m.set('b',100)each(arr)each(nodeList)each(m)//简化后function each (data) &#123; for (let item of data)&#123; console.log(item) &#125;&#125;let arr = [1,2,3,4]let nodeList = document.getElementsByTagName('p')let m = new Map()m.set('a',100)m.set('b',100)each(arr)each(nodeList)each(m)]]></content>
       <categories>
         <category>js中的设计模式</category>
       </categories>
