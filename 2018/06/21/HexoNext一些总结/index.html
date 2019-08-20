@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="colinyou&#39;s home">
 <meta property="og:description" content="自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧! 注: 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 1. 启动及部署指令本地查看效果1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-09T10:13:03.760Z">
+<meta property="og:updated_time" content="2019-08-20T15:46:07.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建Next主题使用小结">
 <meta name="twitter:description" content="自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧! 注: 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 1. 启动及部署指令本地查看效果1">
@@ -377,7 +377,7 @@
         <p>自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧!</p>
 <p>注: 在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 <code>站点配置文件</code>， 后者称为 <code>主题配置文件</code>。</p>
 <h3 id="1-启动及部署指令"><a href="#1-启动及部署指令" class="headerlink" title="1. 启动及部署指令"></a>1. 启动及部署指令</h3><h5 id="本地查看效果"><a href="#本地查看效果" class="headerlink" title="本地查看效果"></a>本地查看效果</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<h5 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean (必须要，不然有时因为缓存问题，服务器更新不了主题)</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h5 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean (必须要，不然有时因为缓存问题，服务器更新不了主题)</span><br><span class="line">hexo generate</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <h3 id="2-next主题配置"><a href="#2-next主题配置" class="headerlink" title="2. next主题配置"></a>2. next主题配置</h3><h5 id="博客主题样式"><a href="#博客主题样式" class="headerlink" title="博客主题样式"></a>博客主题样式</h5><p><code>主题配置文件</code>修改 scheme: Pisces</p>
 <h5 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h5><p><code>站点配置文件</code>修改 language: zh-Hans</p>
 <h5 id="设置菜单栏"><a href="#设置菜单栏" class="headerlink" title="设置菜单栏"></a>设置菜单栏</h5><p><code>主题配置文件</code>修改</p>
@@ -445,8 +445,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/22/策略模式/" rel="prev" title="策略模式">
-                策略模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/22/工厂模式/" rel="prev" title="工厂模式">
+                工厂模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

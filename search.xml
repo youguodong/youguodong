@@ -152,8 +152,8 @@
         <category>vue</category>
       </categories>
       <tags>
-        <tag>vue</tag>
         <tag>nginx</tag>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -245,17 +245,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[单例模式]]></title>
-    <url>%2F2018%2F06%2F23%2F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[相关代码实现12345678910111213141516171819class SingleObject&#123; login() &#123; console.log('login...') &#125;&#125;SingleObject.getInstance = (function () &#123; let instance return function () &#123; if (!instance)&#123; instance = new SingleObject() &#125; return instance &#125;&#125;)()let obj1 = SingleObject.getInstance()obj1.login()let obj2 = SingleObject.getInstance()obj2.login()console.log('obj1 === obj2',obj1 === obj2) 场景1 模拟登录 123456789101112131415161718192021222324252627282930313233343536class LoginForm &#123; constructor() &#123; this.state = 'hide' &#125; show() &#123; if (this.state === 'show')&#123; alert('已显示') return &#125; this.state = 'show' console.log('登录框显示成功') &#125; hide() &#123; if (this.state === 'hide')&#123; alert('已隐藏') return &#125; this.state = 'hide' console.log('登录框已隐藏') &#125;&#125;LoginForm.getInstance = (function () &#123; let instance return function () &#123; if (!instance)&#123; instance = new LoginForm() &#125; return instance &#125;&#125;)()let login1 = LoginForm.getInstance()login1.show()let login2 = LoginForm.getInstance()login2.show()]]></content>
-      <categories>
-        <category>js中的设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[组合模式]]></title>
     <url>%2F2018%2F06%2F23%2F%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[生成树形结构，表示“整体-部分”关系，让整体和部分都具有一致的操作方式 相关代码实现12345678910111213141516171819&#123; tag: 'div', attr: &#123; id: 'div1', className: 'container' &#125;, children: [ &#123; tag: 'p', attr: &#123;&#125;, chirldren: ['123'] &#125;, &#123; tag: 'p', attr: &#123;&#125;, chirdren: ['456'] &#125; ] &#125;]]></content>
@@ -267,9 +256,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[工厂模式]]></title>
-    <url>%2F2018%2F06%2F22%2F%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[将new操作单独封装，遇到new时，就要考虑是否使用工厂模式 相关代码实现12345678910111213141516171819202122232425class Product &#123; constructor(name) &#123; this.name = name &#125; init() &#123; alert('init') &#125; fun1() &#123; alert('fun1') &#125; fun2() &#123; alert('fun2') &#125;&#125;class Creator &#123; create(name) &#123; return new Product(name) &#125;&#125;let creator = new Creator()let p = creator.create('p1')p.init()p.fun2()]]></content>
+    <title><![CDATA[单例模式]]></title>
+    <url>%2F2018%2F06%2F23%2F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[相关代码实现12345678910111213141516171819class SingleObject&#123; login() &#123; console.log('login...') &#125;&#125;SingleObject.getInstance = (function () &#123; let instance return function () &#123; if (!instance)&#123; instance = new SingleObject() &#125; return instance &#125;&#125;)()let obj1 = SingleObject.getInstance()obj1.login()let obj2 = SingleObject.getInstance()obj2.login()console.log('obj1 === obj2',obj1 === obj2) 场景1 模拟登录 123456789101112131415161718192021222324252627282930313233343536class LoginForm &#123; constructor() &#123; this.state = 'hide' &#125; show() &#123; if (this.state === 'show')&#123; alert('已显示') return &#125; this.state = 'show' console.log('登录框显示成功') &#125; hide() &#123; if (this.state === 'hide')&#123; alert('已隐藏') return &#125; this.state = 'hide' console.log('登录框已隐藏') &#125;&#125;LoginForm.getInstance = (function () &#123; let instance return function () &#123; if (!instance)&#123; instance = new LoginForm() &#125; return instance &#125;&#125;)()let login1 = LoginForm.getInstance()login1.show()let login2 = LoginForm.getInstance()login2.show()]]></content>
       <categories>
         <category>js中的设计模式</category>
       </categories>
@@ -289,9 +278,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[工厂模式]]></title>
+    <url>%2F2018%2F06%2F22%2F%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[将new操作单独封装，遇到new时，就要考虑是否使用工厂模式 相关代码实现12345678910111213141516171819202122232425class Product &#123; constructor(name) &#123; this.name = name &#125; init() &#123; alert('init') &#125; fun1() &#123; alert('fun1') &#125; fun2() &#123; alert('fun2') &#125;&#125;class Creator &#123; create(name) &#123; return new Product(name) &#125;&#125;let creator = new Creator()let p = creator.create('p1')p.init()p.fun2()]]></content>
+      <categories>
+        <category>js中的设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo搭建Next主题使用小结]]></title>
     <url>%2F2018%2F06%2F21%2FHexoNext%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧! 注: 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 1. 启动及部署指令本地查看效果12hexo generatehexo server 部署到服务器123hexo clean (必须要，不然有时因为缓存问题，服务器更新不了主题)hexo generatehexo server 2. next主题配置博客主题样式主题配置文件修改 scheme: Pisces 设置语言站点配置文件修改 language: zh-Hans 设置菜单栏主题配置文件修改 1234567menu: home: / || home tags: /tags/ || tags categories: /categories/ || th archives: /archives/ || archivemenu_icons: enable: true 设置菜单栏总是靠左显示主题配置文件修改 123sidebar: position: left display: always 设置头像主题配置文件修改 1avatar: http://example.com/avatar.png 设置作者昵称站点配置文件修改 author: xxx 设置首页只显示预览(卡片效果)主题配置文件修改 123auto_excerpt: enable: true length: 150 添加站点搜索功能第一步 站点根目录安装 hexo-generator-searchdb 1npm install hexo-generator-searchdb --save 第二步 站点配置文件 添加search字段具体如下 12345search: path: search.xml field: post format: html limit: 10000 第三步 主题配置文件 修改 12local_search: enable: true 添加标签页面第一步 在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 tags 12$ cd your-hexo-site$ hexo new page tags 第二步 .md的页面内容设置如下 123title: js设计模式date: 2014-12-22 12:39:04type: &quot;tags&quot;(必填) 第三步 修改菜单 在菜单中添加链接，编辑主题配置文件， 添加 tags 到 menu 中，如下: 1234menu: home: / archives: /archives tags: /tags (必填) 添加分类页面第一步 在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 categories 12cd your-hexo-sitehexo new page categories 第二步 编辑刚新建的页面，将页面的 type 设置为 categories ，主题将自动为这个页面显示分类。页面内容如下： 1234title: 分类date: 2014-12-22 12:39:04type: &quot;categories&quot; (必填)--- 第三步 在菜单中添加链接。编辑主题配置文件,添加 categories 到 menu 中，如下: 1234menu: home: / archives: /archives categories: /categories (必填)]]></content>
+    <content type="text"><![CDATA[自己在使用hexo搭建博客的时候碰到了不少坑，下面来做一些总结吧! 注: 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 1. 启动及部署指令本地查看效果12hexo generatehexo server 部署到服务器123hexo clean (必须要，不然有时因为缓存问题，服务器更新不了主题)hexo generatehexo d 2. next主题配置博客主题样式主题配置文件修改 scheme: Pisces 设置语言站点配置文件修改 language: zh-Hans 设置菜单栏主题配置文件修改 1234567menu: home: / || home tags: /tags/ || tags categories: /categories/ || th archives: /archives/ || archivemenu_icons: enable: true 设置菜单栏总是靠左显示主题配置文件修改 123sidebar: position: left display: always 设置头像主题配置文件修改 1avatar: http://example.com/avatar.png 设置作者昵称站点配置文件修改 author: xxx 设置首页只显示预览(卡片效果)主题配置文件修改 123auto_excerpt: enable: true length: 150 添加站点搜索功能第一步 站点根目录安装 hexo-generator-searchdb 1npm install hexo-generator-searchdb --save 第二步 站点配置文件 添加search字段具体如下 12345search: path: search.xml field: post format: html limit: 10000 第三步 主题配置文件 修改 12local_search: enable: true 添加标签页面第一步 在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 tags 12$ cd your-hexo-site$ hexo new page tags 第二步 .md的页面内容设置如下 123title: js设计模式date: 2014-12-22 12:39:04type: &quot;tags&quot;(必填) 第三步 修改菜单 在菜单中添加链接，编辑主题配置文件， 添加 tags 到 menu 中，如下: 1234menu: home: / archives: /archives tags: /tags (必填) 添加分类页面第一步 在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 categories 12cd your-hexo-sitehexo new page categories 第二步 编辑刚新建的页面，将页面的 type 设置为 categories ，主题将自动为这个页面显示分类。页面内容如下： 1234title: 分类date: 2014-12-22 12:39:04type: &quot;categories&quot; (必填)--- 第三步 在菜单中添加链接。编辑主题配置文件,添加 categories 到 menu 中，如下: 1234menu: home: / archives: /archives categories: /categories (必填)]]></content>
       <categories>
         <category>hexo</category>
       </categories>
